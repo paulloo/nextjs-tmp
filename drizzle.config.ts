@@ -29,7 +29,7 @@ const csMysql: string = addQueryParamIfMissed(
 const csPgsql: string = addQueryParamIfMissed(
   env.DATABASE_URL,
   "sslmode",
-  "require",
+  "disable",
 );
 
 // Connection strings for MySQL and PostgreSQL

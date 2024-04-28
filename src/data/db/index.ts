@@ -32,7 +32,7 @@ const csMysql: string = addQueryParamIfMissed(
 const csPgsql: string = addQueryParamIfMissed(
   env.DATABASE_URL,
   "sslmode",
-  "require",
+  "disable",
 );
 
 // todo: we need to figure out
@@ -72,7 +72,7 @@ try {
     case "railway":
     case "vercel":
     case "neon": {
-      db = drizzlePostgres(postgres(csPgsql, { ssl: "allow", max: 1 }), {
+      db = drizzlePostgres(postgres(csPgsql, { max: 1 }), {
         schema: schemaPgsql,
         logger: false,
       });
